@@ -1,12 +1,13 @@
 {
   "version": 2,
+  "rootDirectory": "./fairbnb",
   "builds": [
     {
-      "src": "fairbnb/backend/server.js",
+      "src": "backend/server.js",
       "use": "@vercel/node"
     },
     {
-      "src": "fairbnb/frontend/package.json",
+      "src": "frontend/package.json",
       "use": "@vercel/static-build",
       "config": {
         "distDir": "build"
@@ -16,11 +17,11 @@
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "fairbnb/backend/server.js"
+      "dest": "backend/server.js"
     },
     {
       "src": "/(.*)",
-      "dest": "fairbnb/frontend/build/$1"
+      "dest": "frontend/build/$1"
     }
   ]
 } 
