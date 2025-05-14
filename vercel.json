@@ -9,7 +9,7 @@
       "src": "fairbnb/frontend/package.json",
       "use": "@vercel/static-build",
       "config": {
-        "distDir": "build"
+        "distDir": "dist"
       }
     }
   ],
@@ -20,7 +20,7 @@
     },
     {
       "src": "/(.*)",
-      "dest": "fairbnb/frontend/build/$1"
+      "dest": "fairbnb/frontend/dist/$1"
     }
   ]
 } 
