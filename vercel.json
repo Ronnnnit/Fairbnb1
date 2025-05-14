@@ -1,0 +1,26 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "fairbnb/backend/server.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "fairbnb/frontend/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "build"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "fairbnb/backend/server.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "fairbnb/frontend/build/$1"
+    }
+  ]
+} 

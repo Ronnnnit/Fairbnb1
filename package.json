@@ -1,0 +1,15 @@
+{
+  "name": "fairbnb",
+  "version": "1.0.0",
+  "description": "Fairbnb - Airbnb Clone",
+  "scripts": {
+    "install-all": "npm install && cd fairbnb/frontend && npm install && cd ../backend && npm install",
+    "build": "cd fairbnb/frontend && npm run build",
+    "start": "cd fairbnb/backend && npm start",
+    "dev": "concurrently \"cd fairbnb/frontend && npm start\" \"cd fairbnb/backend && npm run dev\"",
+    "vercel-build": "npm run install-all && npm run build"
+  },
+  "dependencies": {
+    "concurrently": "^8.2.2"
+  }
+} 
